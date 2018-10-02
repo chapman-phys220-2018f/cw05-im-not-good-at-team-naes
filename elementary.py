@@ -1,78 +1,65 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-<<<<<<< HEAD
-# Amelia Roseto
-# 2289652
-# roseto@chapman.edu
-=======
-# Royal Cuevas
-# 2285562
-# cueva114@mail.chapman.edu
->>>>>>> f2002266b5ad377e51769e208e400ff6725ae9d2
-# PHYS220 Fall 2018
-# CW 05
+####
+# Amelia & Royal
+# Email: roseto@chapman.edu
+# CW 5
+# PHYS 220
+# Septemeber 27, 2018
+####
 
-import numpy as np
-from scipy import constants as const
-
+import scipy.constants
 
 class Particle(object):
-<<<<<<< HEAD
-    mass = 0
-    position = (0.0, 0.0, 0.0)
-    momentum = (0.0, 0.0, 0.0)
-
-    def __init__(self, x, y ,z):
-        """Class constructor
-=======
-    mass = 12
-    position = (3.0, 10.0, 20.0)
-    momentum = (40.0, 50.0, 0.60)
-
-    def __init__(self, x, y ,z):
+    """Particle is a class that should have 3 initialized variables: Mass(a float), Position(A triplet of floats), Momentum(A triplet of floats)"""
+    mass = 0.0
+    position = (0.0,0.0,0.0)
+    momentum = (0.0,0.0,0.0)
+    
+    def __init__(self, x, y, z):
         """Class constructor
 
 >>>>>>> f2002266b5ad377e51769e208e400ff6725ae9d2
         Sets initial values for 3 attributes.
         Requires a floating point triple as an
         arguement for the starting position of the particle"""
-
-        self.position = (x, y ,z)
+        self.position = (x, y, z)
         self.mass = 1.0
-        self.momentum = (0.0, 0.0, 0.0)
+        self.momentum = (0.0,0.0,0.0)
 
-    def impulse(self, px, py, pz):
+    def impulse(self, px,py,pz):
         """Alters the momentum by the impulse amount.
         Requires floating point triple to set impulse
         value."""
-        print(self.momentum)
-        self.momentum = tuple(np.add(self.momentum, (px, py, pz)))
-        print(self.momentum)
+        self.momentum = (self.momentum[0]+px,self.momentum[1]+py,self.momentum[2]+pz)
 
     def move(self, dt):
         """Moves particle by one dt.
         Requires time unit for movement measurement."""
         #dt*momentum/mass
-        self.position = tuple(np.add(np.divide(tuple((dt*x for x in self.momentum)), self.mass), self.position))
-        print(self.position)
+        self.position = (self.position[0] + (dt/self.mass)*self.momentum[0],self.position[1]+(dt/self.mass)*self.momentum[1],self.position[2]+(dt/self.mass)*self.momentum[2])
 
 class ChargedParticle(Particle):
-    charge = 0
-    def __init__(self, x, y, z):
-        Particle.__init__(self, x, y, z)
-        self.charge = const.e
+    charge = 0.0
 
+    def __init__(self, x, y, z):
+        super(Particle,self).__init__(x, y, z)
+        self.charge = 0.0
+    
 class Electron(ChargedParticle):
-    charge = 0
+    
     def __init__(self, x, y, z):
-        ChargedParticle.__init__(self, x, y, z)
-        self.mass = const.m_e
-        self.charge = -const.e
-
+        self.charge = -scipy.constants.e
+        super(ChargedParticle,self).__init__(x, y, z)
+        self.mass = scipy.constants.m_e
+    
 class Proton(ChargedParticle):
-    charge = 0
+    
     def __init__(self, x, y, z):
-        ChargedParticle.__init__(self, x, y, z)
-        self.mass = const.m_p
-        self.charge = const.e
+        self.charge = scipy.constants
+        super(ChargedParticle,self).__init__(x, y, z)
+        self.mass = scipy.constants.m_p
+    
+def main(argv):
+    pass
