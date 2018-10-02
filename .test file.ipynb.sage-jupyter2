@@ -1,0 +1,6 @@
+{"exec_count":5,"start":1538444742285,"input":"import elementary\n","state":"done","pos":0,"cell_type":"code","type":"cell","end":1538444742368,"id":"4a5974","kernel":"anaconda5"}
+{"type":"cell","id":"548716","pos":0.5,"input":""}
+{"type":"cell","id":"632f5c","pos":2,"input":"","cell_type":"code"}
+{"type":"cell","id":"9d50e6","pos":1,"input":"","cell_type":"code"}
+{"type":"file","last_load":1538442241559}
+{"type":"settings","backend_state":"running","kernel":"anaconda5","trust":true,"metadata":{"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py","mimetype":"text/x-python","name":"python","nbconvert_exporter":"python","pygments_lexer":"ipython3","version":"3.6.5"}},"kernel_state":"idle","kernel_usage":{"cpu":0,"memory":76029952}}
