@@ -16,10 +16,9 @@ class Particle(object):
     mass = 0.0
     position = (0.0,0.0,0.0)
     momentum = (0.0,0.0,0.0)
-    
+
     def __init__(self, x, y, z):
         """Class constructor
-
 >>>>>>> f2002266b5ad377e51769e208e400ff6725ae9d2
         Sets initial values for 3 attributes.
         Requires a floating point triple as an
@@ -40,26 +39,27 @@ class Particle(object):
         #dt*momentum/mass
         self.position = (self.position[0] + (dt/self.mass)*self.momentum[0],self.position[1]+(dt/self.mass)*self.momentum[1],self.position[2]+(dt/self.mass)*self.momentum[2])
 
+
 class ChargedParticle(Particle):
     charge = 0.0
 
     def __init__(self, x, y, z):
         super(Particle,self).__init__(x, y, z)
         self.charge = 0.0
-    
+
 class Electron(ChargedParticle):
-    
+
     def __init__(self, x, y, z):
         self.charge = -scipy.constants.e
         super(ChargedParticle,self).__init__(x, y, z)
         self.mass = scipy.constants.m_e
-    
+
 class Proton(ChargedParticle):
-    
+
     def __init__(self, x, y, z):
-        self.charge = scipy.constants
+        self.charge = scipy.constants.e
         super(ChargedParticle,self).__init__(x, y, z)
         self.mass = scipy.constants.m_p
-    
-def main(argv):
-    pass
+
+    def main(argv):
+        pass
