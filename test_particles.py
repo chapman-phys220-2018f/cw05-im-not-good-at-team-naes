@@ -46,4 +46,3 @@ def test_proton():
     p = elementary.Proton(1.0, 2.0, 3.0)
     assert math.isclose(p.mass, constants.m_p)
     assert math.isclose(p.charge, constants.e)
-    
