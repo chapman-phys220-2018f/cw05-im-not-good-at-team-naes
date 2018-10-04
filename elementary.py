@@ -15,7 +15,7 @@ class Particle(object):
     """Particle is a class that should have 3 initialized variables: Mass(a float), Position(A triplet of floats), Momentum(A triplet of floats)"""
     mass = 0.0
     position = (0.0,0.0,0.0)
-    momentum = (0.0,0.0,0.0)
+    momentum = (0.0,0.0,10.0)
 
     def __init__(self, x, y, z):
         """Class constructor
